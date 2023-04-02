@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
+    // 유효성 검사를 위한 파이프
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
